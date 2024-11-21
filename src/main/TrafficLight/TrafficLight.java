@@ -39,16 +39,4 @@ public class TrafficLight  {
     public void startTimer() {
         timer.schedule(changeColor, timeRemainingInSeconds * 1000);
     }
-
-    public void changeColor() {
-        TrafficColor oldTrafficColor = currentTrafficColor;
-        if (currentTrafficColor == TrafficColor.Red) {
-            currentTrafficColor = TrafficColor.Green;
-        } else if (currentTrafficColor == TrafficColor.Yellow) {
-            currentTrafficColor = TrafficColor.Red;
-        } else if (currentTrafficColor == TrafficColor.Green) {
-            currentTrafficColor = TrafficColor.Yellow;
-        }
-        support.firePropertyChange("color", oldTrafficColor, currentTrafficColor);
-    }
 }
